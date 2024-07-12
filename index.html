@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOCK</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <button id="begin">Begin</button>
+        <div id="grid"></div>
+        <div id="controls">
+            <label for="delay">Delay:</label>
+            <input type="range" id="delay" min="0" max="1" step="0.05" value="0">
+            <label for="q-factor">Q Factor:</label>
+            <input type="range" id="q-factor" min="500" max="1000" step="10" value="1000">
+            <p class="counter" id="stopwatch" >00:00:00</p>
+            <p class="counter" id="weekcounter" >Week 1</p>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+        let freqs = [];
+        let freq = 0.2;
+        for (let i = 0; i < 365; i++){
+            freqs.push(freq);
+            freq = freq + 0.2;
+        }
+        console.log(freqs);
+    </script>
+</body>
+</html>
