@@ -1,3 +1,5 @@
+//@TODO - refactor and split into utils where necessary
+
 console.clear();
 
 const grid = document.getElementById("grid");
@@ -17,6 +19,7 @@ let oscillators = [];
 let bufferSources = [];
 let gainNodes = [];
 let panners = [];
+// @TODO - even out this range
 let dailyHours = [
   0.2,
   0.4,
@@ -398,12 +401,7 @@ function setup(){
     controls.style = 'display: flex;';
     soundButtons = document.querySelectorAll('.sound-btn');
 
-    //soundButtons[0].click();
-
     startStopwatch();
-
-    //Interval timer
-    //intervalId = setInterval(toggleBlock, intervalTime);
   });
 }
 
@@ -421,6 +419,7 @@ const imagesFolder = 'images/';
 const imageFileExtension = '.png';
 let week = 1;
 
+// @TODO - remove this
 function toggleBlock() {
   
   soundButtons.forEach(button => {
@@ -481,10 +480,12 @@ function toggleBlock() {
   imageIndex++;
 }
 
+//@TODO - remove anything that handles images
 function getCurrentImage() {
   return `${imagesFolder}week-${imageIndex + 1}${imageFileExtension}`;
 }
 
+//@TODO - more keyboard actions (take from tab)
 // start all 
 function startAll(){
   soundButtons.forEach((button) => {
